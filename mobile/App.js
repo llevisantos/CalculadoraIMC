@@ -1,11 +1,11 @@
 //----------- Importando componentes -------
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 //----------- Aplicação -------
-//type Props = {}
+
 //export default class App extends Component<Props> {
-  export default class App extends React.Component {
+  export default class App extends Component {
 
   constructor(props){
     super(props)
@@ -15,37 +15,57 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 
   calcular(){
 
-    let imc = this.state.massa / (this.state.altura * this.state.altura)
+    let imc = this.state.massa / (this.state.altura * this.state.altura) 
     let s = this.state
     s.resultado = imc
+    
     if(s.resultado <16){
-      s.resultadoText = "Subpeso"
-    } else if(s.resultado <17){
-      s.resultadoText = "Subpeso moderado"
-    } else if(s.resultado <18.5){
-      s.resultadoText = "Subpeso Leve"
-    } else if(s.resultado <25){
-      s.resultadoText = "Normal"
-    } else if(s.resultado <30){
-      s.resultadoText = "Sobrepeso"
-    } else if (s.resultado <35 ){
-      s.resultadoText = "Obeso I"
-    } else if(s.resultado <40){
-      s.resultadoText = "Obsidade II"
+      s.resultadoText = "Subpeso | Grau grave"
+    } else if(s.resultado <=17){
+      s.resultadoText = "Subpeso | Grau moderado"
+    } else if(s.resultado <=18.5){
+      s.resultadoText = "Subpeso | Grau Leve"
+    } else if(s.resultado <=25){
+      s.resultadoText = "Peso ideial"
+    } else if(s.resultado <=30){
+      s.resultadoText = "Sobrepeso | Grau Leve"
+    } else if (s.resultado <=35 ){
+      s.resultadoText = "Obeso | Grau I"
+    } else if(s.resultado <=40){
+      s.resultadoText = "Obseso | Grau II"
     }
     else {
-      s.resultadoText = "Obesidade III"
+      s.resultadoText = "Obeso | Grau III"
     }
-    this.setState(s)    
+    
+    this.setState(s)
   }
   
   render() {
     return (
+
+    
+
       <View style={styles.container}>
 
+        <View style={styles.header}>
+          
+           <Text style={styles.titulo}> ÍNDICE DE MASSA CORPORAL - IMC </Text>
+           <Text style={styles.subtitulo}> CALCULADORA </Text>
+        </View> 
+
+        <View style={styles.menu}>
+
+          <Text style={styles.select}> IMC </Text>
+          <Text style={styles.select2}> PESO </Text>
+          <Text style={styles.select2}> HISTÓRICO </Text>
+
+        </View>
+
         <View style={styles.dados}>
-          <TextInput style={styles.input} placeholder="Massa" keyboardType="numeric" onChangeText={(altura)=>{this.setState({altura})}}/>
-          <TextInput style={styles.input} placeholder="Altura" keyboardType="numeric" onChangeText={(massa)=>{this.setState({massa})}}/>
+          
+          <TextInput style={styles.input} placeholder="Peso: Ex.: 65.0" keyboardType="numeric" onChangeText={(massa)=>{this.setState({massa})}}/>
+          <TextInput style={styles.input} placeholder="Altura: Ex.: 1.79" keyboardType="numeric" onChangeText={(altura)=>{this.setState({altura})}}/>
         </View>
 
         <TouchableOpacity style={styles.button} onPress={this.calcular}><Text style={styles.buttonText}> Calcular </Text></TouchableOpacity>
@@ -65,20 +85,66 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     //justifyContent: 'center',
   },
+  header:{
+    backgroundColor: '#40BB63',
+    textAlign: "center",
+    height:80,
+  },
+  titulo:{
+    fontSize: 18,
+    fontWeight: "bold",
+    color:"#FFF",
+    textAlign:'center',
+    marginTop:30,
+  },
+  subtitulo:{
+    fontSize: 18,
+    fontWeight:"normal",
+    color:"#FFF",
+    textAlign:'center',
+  },
+  menu:{
+    flexDirection:'row',
+    alignSelf:'center',
+    padding:20,
+    fontSize:20,
+    color:"#C9C8C8",
+  },
+  select:{
+    textAlign:'center',
+    width:100,
+    fontWeight: 'bold',
+    paddingBottom:5,
+    borderBottomColor:"#78C691",
+    borderBottomWidth:4,
+   
+  },
+  select2:{
+  
+    width:100,
+    textAlign:'center',
+
+  },
   dados: {
-    flexDirection: 'row',
+    alignSelf:"center",
+    
   },
   input:{
     height:80,
     textAlign:"center",
-    width:"50%",
+    width: 300,
     fontSize:40,
     marginTop:24,
+    borderBottomColor:"#40BC64",
+    borderBottomWidth:2,
+
   },
   button: {
-    
+    borderRadius:10,
+    alignSelf:'center',
+    width:'50%',
+    marginTop:24,
     backgroundColor:'#00cf45',
-
   },
   buttonText:{
     alignSelf:'center',
@@ -88,10 +154,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   resultado:{
+    marginTop:24,
     alignSelf: 'center',
     padding: 2,
-    fontSize:18,
-    color:'#D4D4D4',
+    fontSize:20,
+    fontWeight:'bold',
+    color:'#40BB63',
   
   },
 
