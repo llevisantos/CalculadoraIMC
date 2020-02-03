@@ -81,13 +81,13 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa',
+    backgroundColor: "#fafafa",
     //alignItems: 'center',
     //justifyContent: 'center',
   },
   header:{
-    backgroundColor: '#40BB63',
-    textAlign: "center",
+    backgroundColor: "#40BB63",
+    textAlign: 'center',
     height:80,
   },
   titulo:{
@@ -126,12 +126,12 @@ const styles = StyleSheet.create({
 
   },
   dados: {
-    alignSelf:"center",
+    alignSelf:'center',
     
   },
   input:{
     height:80,
-    textAlign:"center",
+    textAlign:'center',
     width: 300,
     fontSize:40,
     marginTop:24,
@@ -144,14 +144,14 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     width:'50%',
     marginTop:24,
-    backgroundColor:'#00cf45',
+    backgroundColor:"#00cf45",
   },
   buttonText:{
     alignSelf:'center',
     padding: 10,
     fontSize: 18,
-    color:'#FFF',
-    fontWeight: "bold",
+    color:"#FFF",
+    fontWeight: 'bold',
   },
   resultado:{
     marginTop:24,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     padding: 2,
     fontSize:20,
     fontWeight:'bold',
-    color:'#40BB63',
+    color:"#40BB63",
   
   },
 

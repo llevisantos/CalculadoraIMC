@@ -14,7 +14,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "##35CB60"
+      "backgroundColor": "#35CB60"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,11 +24,13 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.levi.calculadoraIMC"
+      "bundleIdentifier": "com.levi.calculadoraimc"
     },
     "android": {
-      "package": "com.levi.calculadoraIMC",
+      "package": "com.levi.calculadoraimc",
       "versionCode": 1
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/EngLewis"
   }
 }
