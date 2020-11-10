@@ -1,8 +1,8 @@
 # Calculadora IMC 
 
-```
-https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>&style=<STYLE>&logo=<LOGO>
-```
+
+
+![Badget](https://img.shields.io/github/languages/count/EngLewis/CalculadoraIMC)![Badgate](https://img.shields.io/github/languages/top/EngLewis/CalculadoraIMC)![Badge](https://img.shields.io/github/issues/EngLewis/CalculadoraIMC)![Badged](https://img.shields.io/appveyor/build/EngLewis/CalculadoraIMC)![Badge](https://img.shields.io/github/followers/EngLewis?style=social)
 
 >  Uma simples aplicação calculadora de IMC utilizando React Native
 
